@@ -257,9 +257,6 @@ ENABLE_VENDOR_RIL_SERVICE := true
 # Screen density
 TARGET_SCREEN_DENSITY := 440
 
-# Security patch level
-VENDOR_SECURITY_PATCH := 2025-11-01
-
 # Sepolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 
@@ -277,6 +274,9 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
 # Vendor Boot
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.default
+
+# Vendor Security Patch
+VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
