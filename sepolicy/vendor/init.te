@@ -4,3 +4,7 @@ set_prop(vendor_init, vendor_thermal_normal_prop)
 set_prop(vendor_init, vendor_nfc_mi_prop)
 set_prop(vendor_init, vendor_ssr_prop)
 set_prop(vendor_init, vendor_qcc_prop)
+
+# FPS info
+allow init vendor_sysfs_graphics:dir search;
+allow init vendor_sysfs_graphics:file rw_file_perms;
