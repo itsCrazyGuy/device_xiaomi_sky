@@ -21,3 +21,6 @@ on early-init && property:ro.boot.hwc=Japan
 
 on property:persist.sys.xtra-daemon.enabled=*
     restart loc_launcher
+
+# Set the swappiness value
+write /proc/sys/vm/swappiness 40
