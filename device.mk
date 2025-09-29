@@ -58,12 +58,10 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl:64 \
     android.hardware.audio.effect@7.0-impl:64 \
     android.hardware.audio.service \
-    android.hardware.soundtrigger@2.3-impl:64 \
-    vendor.qti.hardware.AGMIPC@1.0-service
+    android.hardware.soundtrigger@2.3-impl:64
 
 PRODUCT_PACKAGES += \
     audio.bluetooth.default:64 \
-    audio.primary.parrot:64 \
     audio.r_submix.default:64 \
     audio.usb.default:64 \
     sound_trigger.primary.parrot:64
@@ -75,12 +73,8 @@ PRODUCT_PACKAGES += \
     lib_bt_aptx:64 \
     lib_bt_ble:64 \
     lib_bt_bundle:64 \
-    libagm_compress_plugin:64 \
-    libagm_mixer_plugin:64 \
-    libagm_pcm_plugin:64 \
     libbatterylistener:64 \
     libfmpal:64 \
-    libpalclient:64 \
     libqcompostprocbundle:64 \
     libqcomvisualizer:64 \
     libqcomvoiceprocessing:64 \
