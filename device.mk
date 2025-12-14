@@ -373,6 +373,7 @@ PRODUCT_PACKAGES += \
     CarrierConfig \
     FrameworksResCommon \
     FrameworksResTarget \
+    LauncherOverlayTarget \
     SettingsResCommon \
     SystemUIResCommon \
     TelephonyResCommon \
