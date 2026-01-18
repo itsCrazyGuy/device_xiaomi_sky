@@ -1,3 +1,5 @@
+# Device proprietary files - from sky HyperOS OS2.0.211.0.VMWEUXM package, unless pinned
+
 # ACDB
 vendor/etc/acdbdata/nn_ns_models/fai__2.0.0_0.1__3.0.0_0.0__eai_1.36_enpu2.pmd
 vendor/etc/acdbdata/nn_ns_models/fai__2.3.0_0.1__3.0.0_0.0__eai_1.10.pmd
@@ -992,6 +994,7 @@ vendor/firmware/venus_v7.mbn
 vendor/bin/mlipayd@1.1
 vendor/etc/init/vendor.xiaomi.hardware.mlipay@1.1-service.rc
 vendor/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.mlipay.xml
+vendor/lib64/libmisight.so
 vendor/lib64/libmlipay.so
 vendor/lib64/libmlipay@1.1.so
 
