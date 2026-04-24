@@ -16,8 +16,8 @@ echo "Cloning vendor repository..."
 git clone https://github.com/anonytry/vendor_xiaomi_sky.git vendor/xiaomi/sky
 
 # Clone the firmware source
-echo "Cloning firmware repository..."
-git clone https://codeberg.org/askthekaif/android_vendor_xiaomi_sky-firmware-af.git -b OS2.0.9.0.VMWEUXM vendor/xiaomi/sky-firmware
+#echo "Cloning firmware repository..."
+#git clone https://codeberg.org/askthekaif/android_vendor_xiaomi_sky-firmware-af.git -b OS2.0.9.0.VMWEUXM vendor/xiaomi/sky-firmware
 
 # Clone the dolby repository
 echo "Cloning dolby hardware repository..."
