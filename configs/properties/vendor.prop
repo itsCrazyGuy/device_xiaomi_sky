@@ -133,9 +133,6 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 # FS-verity
 ro.apk_verity.mode=2
 
-# Gatekeeper
-vendor.gatekeeper.disable_spu=true
-
 # Graphics
 persist.sys.sf.color_saturation=1.0
 persist.sys.sf.color_mode=7
@@ -153,6 +150,7 @@ debug.sf.disable_client_composition_cache=1
 debug.sf.enable_gl_backpressure=0
 debug.sf.enable_advanced_sf_phase_offset=1
 debug.sf.enable_transaction_tracing=false
+
 debug.sf.frame_rate_multiple_threshold=90
 debug.sf.enable_egl_image_tracker=0
 debug.sf.predict_hwc_composition_strategy=0
@@ -181,7 +179,7 @@ debug.sdm.support_writeback=0
 
 # HWUI
 debug.hwui.use_hint_manager=true
-debug.hwui.target_cpu_time_percent=30
+debug.hwui.target_cpu_time_percent=25
 debug.sf.enable_adpf_cpu_hint=true
 
 # Media
@@ -252,6 +250,10 @@ vendor.qcom.vibrator.led.mv_max=3500
 
 # WiFi
 wifi.aware.interface=wifi-aware0
+
+# Media Volume Steps
+ro.config.media_vol_steps=25
+ro.config.vc_call_vol_steps=20
 
 # Keystore
 ro.hardware.keystore_desede=true

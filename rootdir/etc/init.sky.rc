@@ -93,3 +93,13 @@ on property:ro.boot.boardid=S88029EA1
 
 on property:ro.boot.boardid=S88018PA1
         start vendor.nfc_hal_service
+
+service vendor.kernel-post-boot /vendor/bin/sh /vendor/bin/init.kernel.post_boot.sh
+    class late_start
+    user root
+    group root system wakelock graphics
+    disabled
+    oneshot
+
+on property:sys.boot_completed=1
+    start vendor.kernel-post-boot

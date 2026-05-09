@@ -153,12 +153,34 @@ PRODUCT_COPY_FILES += \
 
 # Dalvik heap
 PRODUCT_PROPERTY_OVERRIDES  += \
-           dalvik.vm.heapstartsize=8m \
-           dalvik.vm.heapsize=256m \
-           dalvik.vm.heapgrowthlimit=128m \
-           dalvik.vm.heaptargetutilization=0.75 \
-           dalvik.vm.heapminfree=512k \
-           dalvik.vm.heapmaxfree=8m
+    dalvik.vm.heapstartsize=8m \
+    dalvik.vm.heapsize=512m \
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.heapminfree=2m \
+    dalvik.vm.heapmaxfree=8m
+
+# LMKD
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.lmk.kill_heaviest_task=true \
+    ro.lmk.kill_timeout_ms=100 \
+    ro.lmk.use_minfree_levels=false \
+    ro.lmk.use_new_strategy=true \
+    ro.lmk.psi_partial_stall_ms=100 \
+    ro.lmk.psi_complete_stall_ms=700 \
+    ro.lmk.thrashing_limit=45 \
+    ro.lmk.thrashing_limit_decay=50 \
+    ro.lmk.reclaim_scan_threshold=0
+
+# Low RAM optimizations
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.config.low_ram=false \
+    ro.config.avoid_gfx_accel=false \
+    ro.sys.fw.bg_apps_limit=32 \
+    ro.vendor.qti.am.resourcemanager.enable=true
+
+# Dynamic Heap Growth Limit
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapgrowthlimit=256m
 
 # Device Settings
 PRODUCT_PACKAGES += \
