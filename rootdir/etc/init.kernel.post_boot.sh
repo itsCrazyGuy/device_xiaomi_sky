@@ -48,7 +48,6 @@ function configure_variant_parameters() {
 	if [ $RamSizeGB -le 4 ]; then
 		# 4GB Variant - Conservative
 		echo 14336 > /proc/sys/vm/min_free_kbytes
-		setprop dalvik.vm.heapgrowthlimit 192m
 		# Disable MGLRU on 4GB if it causes lag (Keep it optional)
 		if [ -d /sys/kernel/mm/lru_gen ]; then
 			echo 0 > /sys/kernel/mm/lru_gen/enabled 
@@ -56,7 +55,6 @@ function configure_variant_parameters() {
 	else
 		# 6GB+ Variant
 		echo 16384 > /proc/sys/vm/min_free_kbytes
-		setprop dalvik.vm.heapgrowthlimit 256m
 		if [ -d /sys/kernel/mm/lru_gen ]; then
 			echo 1 > /sys/kernel/mm/lru_gen/enabled
 		fi
