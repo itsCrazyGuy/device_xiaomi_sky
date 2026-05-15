@@ -163,22 +163,25 @@ PRODUCT_PROPERTY_OVERRIDES  += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.lmk.kill_heaviest_task=true \
     ro.lmk.kill_timeout_ms=100 \
-    ro.lmk.use_minfree_levels=true \
-    ro.lmk.use_new_strategy=false \
-    ro.lmk.swap_free_low_percentage=10 \
+    ro.lmk.use_minfree_levels=false \
+    ro.lmk.use_new_strategy=true \
+    ro.lmk.psi_partial_stall_ms=70 \
+    ro.lmk.psi_complete_stall_ms=700 \
     ro.lmk.thrashing_limit=30 \
-    ro.lmk.thrashing_limit_decay=25
+    ro.lmk.thrashing_limit_decay=25 \
+    ro.lmk.swap_free_low_percentage=10 \
+    ro.lmk.reclaim_scan_threshold=0
 
 # Low RAM optimizations
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.low_ram=false \
     ro.config.avoid_gfx_accel=false \
-    ro.sys.fw.bg_apps_limit=60 \
+    ro.sys.fw.bg_apps_limit=32 \
     ro.vendor.qti.am.resourcemanager.enable=true
 
 # Dynamic Heap Growth Limit
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapgrowthlimit=384m
+    dalvik.vm.heapgrowthlimit=256m
 
 # Device Settings
 PRODUCT_PACKAGES += \
@@ -414,7 +417,7 @@ PRODUCT_SHIPPING_API_LEVEL := 31
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH) \
-    hardware/lineage/interfaces/power-libperfmgr \
+    hardware/voltage/interfaces/power-libperfmgr \
     hardware/google \
     hardware/google/interfaces \
     hardware/google/pixel \
