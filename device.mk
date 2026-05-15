@@ -165,10 +165,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.lmk.kill_timeout_ms=100 \
     ro.lmk.use_minfree_levels=false \
     ro.lmk.use_new_strategy=true \
-    ro.lmk.psi_partial_stall_ms=70 \
+    ro.lmk.psi_partial_stall_ms=100 \
     ro.lmk.psi_complete_stall_ms=700 \
-    ro.lmk.thrashing_limit=30 \
-    ro.lmk.thrashing_limit_decay=25 \
+    ro.lmk.thrashing_limit=45 \
+    ro.lmk.thrashing_limit_decay=40 \
     ro.lmk.swap_free_low_percentage=10 \
     ro.lmk.reclaim_scan_threshold=0
 

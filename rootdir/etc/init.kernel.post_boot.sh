@@ -47,14 +47,14 @@ function configure_variant_parameters() {
 	
 	if [ $RamSizeGB -le 4 ]; then
 		# 4GB Variant - Conservative
-		echo 14336 > /proc/sys/vm/min_free_kbytes
+		echo 24576 > /proc/sys/vm/min_free_kbytes
 		# Disable MGLRU on 4GB if it causes lag (Keep it optional)
 		if [ -d /sys/kernel/mm/lru_gen ]; then
 			echo 0 > /sys/kernel/mm/lru_gen/enabled 
 		fi
 	else
 		# 6GB+ Variant
-		echo 16384 > /proc/sys/vm/min_free_kbytes
+		echo 32768 > /proc/sys/vm/min_free_kbytes
 		if [ -d /sys/kernel/mm/lru_gen ]; then
 			echo 1 > /sys/kernel/mm/lru_gen/enabled
 		fi
