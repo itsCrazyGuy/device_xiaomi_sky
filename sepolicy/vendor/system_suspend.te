@@ -1,2 +1,0 @@
-allow system_suspend_service sysfs_wakeup:file { read open getattr };
-allow system_suspend_service sysfs_wakeup:dir { search read open };
