@@ -27,7 +27,7 @@ $(call inherit-product, vendor/xiaomi/sky/sky-vendor.mk)
 INF_BUILD := true
 TARGET_BOOTANIMATION_HALF_RES := true
 TARGET_BOOT_ANIMATION_RES := 1080
-INFINITY_MAINTAINER := "𝚂αяιм 𝚁αѕσσℓ"
+INFINITY_MAINTAINER := "TeamToplexy"
 WITH_GAPPS := true
 TARGET_SHIPS_FULL_GAPPS := true
 USE_PIXEL_CHARGER := true
