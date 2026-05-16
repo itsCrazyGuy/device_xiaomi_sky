@@ -547,3 +547,7 @@ $(call inherit-product-if-exists, vendor/bcr/bcr.mk)
 
 # Signify
 $(call inherit-product-if-exists, vendor/signify/keys/keys.mk)
+
+# Speaker PA firmware
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/firmware/aw87xxx_acf.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/aw87xxx_acf.bin

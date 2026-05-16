@@ -566,10 +566,10 @@ service cnss-daemon /system/vendor/bin/cnss-daemon -n -l
     user system
     group system inet net_admin wifi
     capabilities NET_ADMIN
+    disabled
 
-on property:sys.shutdown.requested=*
-    write /sys/kernel/shutdown_wlan/shutdown 1
-    stop cnss-daemon
+on property:vendor.wlan.cnss.ready=1
+    start cnss-daemon
 
 service ssgqmigd /vendor/bin/ssgqmigd
     class late_start
