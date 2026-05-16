@@ -1,2 +1,8 @@
 # To set powerhal init property
 set_prop(vendor_init, vendor_power_prop)
+
+# BT a2dp offload property
+set_prop(vendor_init, vendor_bt_prop)
+
+# apk verity property
+set_prop(vendor_init, apk_verity_prop)
