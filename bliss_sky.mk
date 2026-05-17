@@ -12,9 +12,20 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 # Configure full_base_telephony.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit common rom configurations
-$(call inherit-product, vendor/voltage/config/common_full_phone.mk)
-$(call inherit-product, vendor/voltage/config/BoardConfigReservedSize.mk)
+$(call inherit-product, vendor/bliss/config/common_full_phone.mk)
+
+DEVICE_PACKAGE_OVERLAYS += \
+	$(DEVICE_PATH)/overlay-bliss
+
+BELES_BUILD := true
+RUM_NAME := bliss
+USE_RESERVED_SIZE := true
+TARGET_BOOTANIMATION_HALF_RES := true
+TARGET_BOOT_ANIMATION_RES := 1080
+
+ifeq ($(USE_RESERVED_SIZE),true)
+$(call inherit-product, vendor/bliss/config/BoardConfigReservedSize.mk)
+endif
 
 # Inherit device configurations
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
@@ -22,17 +33,10 @@ $(call inherit-product, $(DEVICE_PATH)/device.mk)
 # Inherit from the proprietary version
 $(call inherit-product, vendor/xiaomi/sky/sky-vendor.mk)
 
-TARGET_BOOTANIMATION_HALF_RES := true
-TARGET_BOOT_ANIMATION_RES := 1080
-
-VOS_BUILD := true
-RUM_NAME := voltage
-DEVICE_PACKAGE_OVERLAYS += \
-	$(DEVICE_PATH)/overlay-voltage
 
 ## Device identifier
 PRODUCT_DEVICE := sky
-PRODUCT_NAME := voltage_sky
+PRODUCT_NAME := bliss_sky
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := 23076RN4BI
 PRODUCT_MANUFACTURER := Xiaomi

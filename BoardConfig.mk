@@ -111,6 +111,11 @@ BOARD_KERNEL_CMDLINE += \
     mtdoops.fingerprint=$(VOLTAGE_VERSION)
 endif
 
+ifeq ($(BELES_BUILD),true)                                                                       BOARD_KERNEL_CMDLINE += \
+     swinfo.fingerprint=$(BLISS_VERSION) \
+     mtdoops.fingerprint=$(BLISS_VERSION)
+endif
+
 ifeq ($(EOS_BUILD),true)
 BOARD_KERNEL_CMDLINE += \
      swinfo.fingerprint=$(EUCLID_VERSION) \

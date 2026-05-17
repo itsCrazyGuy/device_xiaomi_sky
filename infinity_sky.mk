@@ -25,6 +25,7 @@ $(call inherit-product, vendor/xiaomi/sky/sky-vendor.mk)
 
 # Infinity-X Flags
 INF_BUILD := true
+RUM_NAME := lineage
 TARGET_BOOTANIMATION_HALF_RES := true
 TARGET_BOOT_ANIMATION_RES := 1080
 INFINITY_MAINTAINER := "TeamToplexy"

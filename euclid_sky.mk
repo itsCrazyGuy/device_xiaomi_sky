@@ -24,6 +24,7 @@ $(call inherit-product, $(DEVICE_PATH)/device.mk)
 $(call inherit-product, vendor/xiaomi/sky/sky-vendor.mk)
 
 EOS_BUILD := true
+RUM_NAME := lineage
 DEVICE_PACKAGE_OVERLAYS += \
 	$(DEVICE_PATH)/overlay-lineage
 WITH_GMS_COMMS_SUITE := true
