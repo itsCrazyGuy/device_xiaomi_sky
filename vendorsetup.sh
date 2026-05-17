@@ -4,7 +4,7 @@ echo "Setting up repositories for Redmi 12 5G / Poco M6 Pro 5G (sky)..."
 
 # Clone BCR repository
 echo "Cloning BCR repository..."
-rm -rf vendor/bcr && rm -rf vendor/extras/bcr && git clone https://github.com/anonytry/android_vendor_bcr.git vendor/bcr
+#rm -rf vendor/bcr && rm -rf vendor/extras/bcr && git clone https://github.com/anonytry/android_vendor_bcr.git vendor/bcr
 
 # Clone the kernel source
 echo "Cloning kernel repository..."
