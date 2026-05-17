@@ -10,6 +10,8 @@
 #include <sys/ioctl.h>
 #include <linux/input.h>
 
+#include <string>
+
 namespace {
 int open_ts_input() {
     int fd = -1;
@@ -20,13 +22,12 @@ int open_ts_input() {
 
         while ((ent = readdir(dir)) != NULL) {
             if (ent->d_type == DT_CHR) {
-                char absolute_path[PATH_MAX] = {0};
+                std::string absolute_path = std::string("/dev/input/") + ent->d_name;
                 char name[80] = {0};
 
-                strcpy(absolute_path, "/dev/input/");
-                strcat(absolute_path, ent->d_name);
+                fd = open(absolute_path.c_str(), O_RDWR);
+                if (fd < 0) continue;
 
-                fd = open(absolute_path, O_RDWR);
                 if (ioctl(fd, EVIOCGNAME(sizeof(name) - 1), &name) > 0) {
                     if (strcmp(name, "fts_ts") == 0 || strcmp(name, "NVTCapacitiveTouchScreen") == 0)
                         break;

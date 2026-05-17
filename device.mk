@@ -174,8 +174,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Low RAM optimizations
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.config.low_ram=false \
-    ro.config.avoid_gfx_accel=false \
     ro.sys.fw.bg_apps_limit=32 \
     ro.vendor.qti.am.resourcemanager.enable=true
 
